@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="100" alignment="CENTER" spacing="10"  prefWidth="200" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ewanstore.DateController">
+    <DatePicker fx:id="datePicker" />
+	<Button fx:id="acceptButton" text="%acceptButton" onAction="#onAcceptButtonClick" />
+	<Button fx:id="cancelButton" text="%cancelButton" onAction="#onCancelButtonClick" />
+</VBox>

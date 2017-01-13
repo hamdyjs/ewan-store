@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox alignment="CENTER" prefHeight="600" spacing="10" prefWidth="800" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="ewanstore.StatsController">
+	<VBox alignment="CENTER" spacing="10">
+		<DatePicker fx:id="fromDatePicker" promptText="From" onAction="#onDateChanged" />
+		<DatePicker fx:id="toDatePicker" promptText="To" onAction="#onDateChanged" />
+		<Label fx:id="totalWeightLabel" text="Total Weight" />
+		<Label fx:id="totalPriceLabel" text="Total Price" />
+	</VBox>
+	<VBox alignment="CENTER" spacing="10">
+		<LineChart fx:id="weightChart" title="%weightChart" legendVisible="false" >
+			<xAxis><NumberAxis lowerBound="1" upperBound="31" tickUnit="1" autoRanging="false" minorTickVisible="false" /></xAxis>
+			<yAxis><NumberAxis minorTickVisible="false" /></yAxis>
+		</LineChart> 
+		<LineChart fx:id="priceChart" title="%priceChart" legendVisible="false" >
+			<xAxis><NumberAxis lowerBound="1" upperBound="31" tickUnit="1" autoRanging="false" minorTickVisible="false" /></xAxis>
+			<yAxis><NumberAxis minorTickVisible="false" /></yAxis>
+		</LineChart>
+	</VBox>
+</HBox>

@@ -1,0 +1,15 @@
+.huge {
+	-fx-font-size: 16px;
+}
+
+.big {
+	-fx-font-size: 14px;
+}
+
+.med {
+	-fx-font-size: 12px;
+}
+
+.small {
+	-fx-font-size: 10px;
+}

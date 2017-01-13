@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" prefWidth="1200" prefHeight="600" BorderPane.alignment="CENTER" fx:controller="ewanstore.MainController">
+	<top>
+		<MenuBar>
+			<Menu fx:id="fileMenu" text="%fileMenu">
+				<MenuItem fx:id="statisticsMenuItem" text="%statisticsMenuItem" onAction="#onStatisticsMenuItemClick"  />
+				<MenuItem fx:id="changeNameMenuItem" text="%changeNameMenuItem" onAction="#onChangeNameMenuItemClick"  />
+				<MenuItem fx:id="exitMenuItem" text="%exitMenuItem" onAction="#onExitMenuItemClick" /> 
+			</Menu>
+			<Menu fx:id="langMenu" text="%langMenu">
+				<MenuItem fx:id="enMenuItem" text="English" onAction="#onLangMenuItemClick"  />
+				<MenuItem fx:id="arMenuItem" text="العربية" onAction="#onLangMenuItemClick" />
+			</Menu>
+			<Menu fx:id="dateMenu" text="%dateMenu">
+				<MenuItem fx:id="dateMenuItem" text="%dateMenuItem" onAction="#onDateMenuItemClick" />
+			</Menu>
+		</MenuBar>
+	</top>
+	<center>
+		<TableView BorderPane.alignment="CENTER" fx:id="itemsTable" prefWidth="600" prefHeight="400" editable="true" onKeyPressed="#onItemsTableKeyPressed"  >
+			<columns>
+				<TableColumn fx:id="kiloColumn" text="%kiloColumn" prefWidth="100" sortable="false" resizable="false" editable="true"   /> 
+				<TableColumn fx:id="weightColumn" text="%weightColumn" prefWidth="100" sortable="false" resizable="false" editable="true"   /> 
+				<TableColumn fx:id="priceColumn" text="%priceColumn" prefWidth="100" sortable="false" resizable="false" editable="true"  />
+				<TableColumn fx:id="dateTimeColumn" text="%dateTimeColumn" prefWidth="300" sortable="true" resizable="false" editable="true" />
+				<TableColumn fx:id="commentColumn" text="%commentColumn" prefWidth="400" sortable="false" resizable="false" editable="true" />
+				<TableColumn fx:id="nameColumn" text="%nameColumn" prefWidth="100" sortable="false" resizable="false" editable="true" />
+				<TableColumn fx:id="paidColumn" text="%paidColumn" prefWidth="20" sortable="false" resizable="false" editable="true" />  
+			</columns>
+		</TableView> 
+	</center>
+	<bottom>
+		<VBox BorderPane.alignment="CENTER">
+			<HBox BorderPane.alignment="CENTER" spacing="10" >
+				<padding><Insets top="10" bottom="10" right="10" left="10" /></padding>
+				<children>
+					<TextField fx:id="kiloText" promptText="%kiloText" prefWidth="150" onAction="#onAddButtonClick" onKeyPressed="#onPricingKeyPressed" />
+					<TextField fx:id="weightText" promptText="%weightText" prefWidth="150" onAction="#onAddButtonClick" onKeyPressed="#onPricingKeyPressed" />
+					<TextField fx:id="priceText" promptText="%priceText" prefWidth="150" onAction="#onAddButtonClick" onKeyPressed="#onPricingKeyPressed" />
+					<TextField fx:id="commentText" promptText="%commentText" prefWidth="350" onAction="#onAddButtonClick" onKeyPressed="#onPricingKeyPressed" />
+					<Button fx:id="addButton" text="%addButton" prefWidth="75" onAction="#onAddButtonClick" />
+					<Button fx:id="deleteButton" text="%deleteButton" prefWidth="75" onAction="#onDeleteButtonClick" />
+					<Region HBox.hgrow="ALWAYS" />
+					<Label fx:id="nameLabel" text="Name:" alignment="CENTER_RIGHT" textAlignment="CENTER" prefWidth="150" prefHeight="25" />
+				</children>
+			</HBox>
+			<HBox BorderPane.alignment="CENTER" spacing="10">
+				<padding><Insets top="10" bottom="10" left="10" right="10"/></padding>
+				<children>
+					<CheckBox fx:id="paidCheckBox" text="%paidCheckBox" prefWidth="120" prefHeight="25" textAlignment="LEFT" alignment="CENTER_LEFT" selected="true" /> 
+					<CheckBox fx:id="retCheckBox" text="%retCheckBox" onAction="#onRetCheckBoxSelected" prefWidth="120" prefHeight="25" textAlignment="LEFT" alignment="CENTER_LEFT" selected="false" /> 
+				</children>
+			</HBox> 
+		</VBox>
+
+	</bottom>
+</BorderPane>
